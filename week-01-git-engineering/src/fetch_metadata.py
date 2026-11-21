@@ -17,10 +17,10 @@ import json
 # ==============================================================================
 # RECRUIT METADATA (Fill these in with your real details)
 # ==============================================================================
-STUDENT_USN = "01FEXXXXXXXX"        # e.g., "01FE25BCS122"
-STUDENT_NAME = "Your Full Name"     # e.g., "Ajay Mallappa"
-BRANCH = "CSE"                      # e.g., "CSE", "AI/DS", "ECE"
-TRACK = "CREDIT_TRACK_YEAR2"        # "CREDIT_TRACK_YEAR2" or "GROWTH_TRACK_YEAR1"
+STUDENT_USN = "01FE26BCI084"        # e.g., "01FE25BCS122"
+STUDENT_NAME = "Vedant Lingadalli"     # e.g., "Ajay Mallappa"
+BRANCH = "CS-AI"                      # e.g., "CSE", "AI/DS", "ECE"
+TRACK = "GROWTH_TRACK_YEAR1"        # "CREDIT_TRACK_YEAR2" or "GROWTH_TRACK_YEAR1"
 
 
 def collect_environment_metadata() -> dict:
@@ -64,7 +64,7 @@ def main():
     data = collect_environment_metadata()
 
     # Validation guard for recruit details
-    if "XXXX" in data["student"]["usn"] or data["student"]["name"] == "Your Full Name":
+    if "XXXX" in data["student"]["usn"] or data["student"]["name"] == "":
         print("\n⚠️ WARNING: Please update STUDENT_USN and STUDENT_NAME in src/fetch_metadata.py!")
     else:
         print(f"\n[OK] Registered to: {data['student']['name']} ({data['student']['usn']})")
